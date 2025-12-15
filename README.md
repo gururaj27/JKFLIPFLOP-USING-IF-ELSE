@@ -47,19 +47,32 @@ Verify the outputs with the JK flip-flop truth table.
 **PROGRAM**
 
 module jkff(j,k,clk,q,qbar);
+
 input j,k,clk;
+
 output reg q,qbar;
+
 initial 
+
 begin
+
 q=1'b0;
+
 q=1'b1;
+
 end 
 
+
 always @(posedge clk)
+
 begin 
+
 q<=(j&~q)|(~k&q);
+
 qbar<=~q;
+
 end
+
 endmodule
 
  Developed by:GURURAJ S RegisterNumber:25012813
@@ -76,3 +89,5 @@ endmodule
 
 
 **RESULTS**
+
+Thus the JK Flip Flop circuits are designed and the truth tables is verified using Quartus software.
