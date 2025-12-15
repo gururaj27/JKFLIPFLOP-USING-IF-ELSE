@@ -34,15 +34,45 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 **Procedure**
 
-/* write all the steps invloved */
+Connect Vcc and GND to the JK flip-flop IC.
+
+Apply clock pulses to the clock input.
+
+Give different input combinations to J and K.
+
+Observe Q and Q̅ outputs for each clock pulse.
+
+Verify the outputs with the JK flip-flop truth table.
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+module jkff(j,k,clk,q,qbar);
+input j,k,clk;
+output reg q,qbar;
+initial 
+begin
+q=1'b0;
+q=1'b1;
+end 
+
+always @(posedge clk)
+begin 
+q<=(j&~q)|(~k&q);
+qbar<=~q;
+end
+endmodule
+
+ Developed by:GURURAJ S RegisterNumber:25012813
 */
 
 **RTL LOGIC FOR FLIPFLOPS**
 
+<img width="1251" height="561" alt="Screenshot 2025-12-15 123213" src="https://github.com/user-attachments/assets/c1e46216-2ced-42a8-bfe7-98e3598c25fe" />
+
+
 **TIMING DIGRAMS FOR FLIP FLOPS**
+
+<img width="1920" height="1080" alt="Screenshot 2025-12-15 123622" src="https://github.com/user-attachments/assets/37958a91-69d0-4147-8b5e-a47c8d0cc3f2" />
+
 
 **RESULTS**
